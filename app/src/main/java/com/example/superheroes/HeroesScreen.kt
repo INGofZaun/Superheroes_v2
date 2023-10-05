@@ -115,3 +115,20 @@ fun HeroListItem(
                     style = MaterialTheme.typography.bodyLarge
                 )
             }
+            Spacer(Modifier.width(16.dp))
+            Box(
+                modifier = Modifier
+                    .size(72.dp)
+                    .clip(RoundedCornerShape(8.dp))
+
+            ) {
+                Image(
+                    painter = painterResource(hero.imageRes),
+                    contentDescription = null,
+                    alignment = Alignment.TopCenter,
+                    contentScale = ContentScale.FillWidth
+                )
+            }
+        }
+    }
+}
