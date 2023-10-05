@@ -132,3 +132,33 @@ fun HeroListItem(
         }
     }
 }
+
+@Preview("Light Theme")
+@Preview("Dark Theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun HeroPreview() {
+    val hero = Hero(
+        R.string.hero1,
+        R.string.description1,
+        R.drawable.android_superhero1
+    )
+    SuperheroesTheme {
+        HeroListItem(hero = hero)
+    }
+}
+
+@Preview("Heroes List")
+@Composable
+fun HeroesPreview() {
+    SuperheroesTheme(darkTheme = false) {
+        Surface (
+            color = MaterialTheme.colorScheme.background
+        ) {
+            /* Important: It is not a good practice to access data source directly from the UI.
+            In later units you will learn how to use ViewModel in such scenarios that takes the
+            data source as a dependency and exposes heroes.
+            */
+            HeroesList(heroes = HeroesRepository.heroes)
+        }
+    }
+}
