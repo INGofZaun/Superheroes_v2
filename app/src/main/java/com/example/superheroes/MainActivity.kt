@@ -66,3 +66,21 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    /**
+     * Composable that displays a Top Bar with an icon and text.
+     *
+     * @param modifier modifiers to set to this composable
+     */
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    fun TopAppBar(modifier: Modifier = Modifier) {
+        CenterAlignedTopAppBar(
+            title = {
+                Text(
+                    text = stringResource(R.string.app_name),
+                    style = MaterialTheme.typography.displayLarge,
+                )
+            },
+            modifier = modifier
+        )
+    }
